@@ -57,11 +57,19 @@ body {
     font-weight: 600;
   }
   
-  .links a {
-    margin-right: 20px;
-    color: #e26ba9;
-    text-decoration: none;
-    font-weight: 500;
+  .icon-links {
+    margin-top: 16px;
+  }
+  
+  .icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    transition: transform 0.2s ease;
+  }
+  
+  .icon:hover {
+    transform: scale(1.15);
   }
   
   .image img {

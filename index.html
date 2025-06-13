@@ -5,69 +5,84 @@
   <title>Sai Preetam | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
-      background: #f8f8f8;
+      background-color: #fafafa;
       color: #333;
     }
 
     nav {
-      background: #fff;
-      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #eee;
+      padding: 24px 48px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #eaeaea;
     }
 
     nav .logo {
-      font-weight: bold;
-      color: #e26ba9;
+      font-weight: 700;
       font-size: 20px;
+      color: #d87093; /* soft pink */
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 30px;
-      padding: 0;
-      margin: 0;
+      gap: 32px;
     }
 
     nav ul li {
-      font-weight: 500;
+      font-size: 16px;
       color: #555;
+      cursor: pointer;
     }
 
-    .container {
-      max-width: 1000px;
+    .wrapper {
+      max-width: 960px;
       margin: 60px auto;
       background: #fff;
-      padding: 40px;
-      display: flex;
-      gap: 40px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      padding: 40px;
     }
 
     .left {
       flex: 1;
+      padding-right: 30px;
     }
 
     .left h1 {
       font-size: 36px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .left p {
       font-size: 18px;
-      line-height: 1.6;
+      line-height: 1.7;
+      margin-bottom: 20px;
     }
 
     .left span {
-      color: #e26ba9;
+      color: #d87093;
       font-weight: 500;
+    }
+
+    .links a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #d87093;
+      font-weight: 500;
+      font-size: 16px;
     }
 
     .right {
@@ -76,21 +91,37 @@
 
     .right img {
       width: 100%;
+      max-width: 300px;
       border-radius: 12px;
+      object-fit: cover;
     }
 
     .footer {
       text-align: center;
       margin-top: 40px;
+      padding-bottom: 20px;
+      color: #aaa;
       font-size: 14px;
-      color: #888;
     }
 
-    .icons a {
-      margin: 0 8px;
-      color: #e26ba9;
-      text-decoration: none;
-      font-size: 18px;
+    @media screen and (max-width: 768px) {
+      .wrapper {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .left, .right {
+        padding: 0;
+      }
+
+      .right {
+        margin-top: 20px;
+      }
+
+      .right img {
+        max-width: 200px;
+      }
     }
   </style>
 </head>
@@ -107,14 +138,16 @@
   </ul>
 </nav>
 
-<div class="container">
+<div class="wrapper">
   <div class="left">
     <h1>Hello! 👋🏽</h1>
     <p>
-      My name is Sai Preetam, and I’m a student at UT Austin studying Informatics with concentrations in Data Science and Finance.<br><br>
+      My name is Sai Preetam, and I’m a student at UT Austin studying Informatics with concentrations in Data Science and Finance.
+    </p>
+    <p>
       I’m passionate about <span>AI, Web Development, and Social Impact Technology</span>. In my free time, I enjoy playing <span>basketball</span>, exploring <span>creative coding projects</span>, and contributing to <span>open-source communities</span>.
     </p>
-    <div class="icons">
+    <div class="links">
       <a href="https://linkedin.com/in/thesaiearanti" target="_blank">LinkedIn</a>
       <a href="https://github.com/TheSaiEaranti" target="_blank">GitHub</a>
       <a href="mailto:saipreetam.earanti@utexas.edu">Email</a>

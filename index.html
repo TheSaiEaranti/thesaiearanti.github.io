@@ -2,14 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sai Preetam | Credit Score Classifier</title>
+  <title>Sai Preetam | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; padding: 2em; background: #f4f4f4; }
-    h1 { color: #333; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f8f8f8;
+      color: #333;
+    }
+
+    nav {
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    nav .logo {
+      font-weight: bold;
+      color: #e26ba9;
+      font-size: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      font-weight: 500;
+      color: #555;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 40px;
+      display: flex;
+      gap: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .left {
+      flex: 1;
+    }
+
+    .left h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .left p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .left span {
+      color: #e26ba9;
+      font-weight: 500;
+    }
+
+    .right {
+      flex: 1;
+    }
+
+    .right img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    .icons a {
+      margin: 0 8px;
+      color: #e26ba9;
+      text-decoration: none;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Portfolio</h1>
-  <p>This project predicts credit scores using machine learning (Random Forest, KNN, Neural Networks...)</p>
+
+<nav>
+  <div class="logo">SAI PREETAM</div>
+  <ul>
+    <li>Home</li>
+    <li>About Me</li>
+    <li>Experience</li>
+    <li>Projects</li>
+    <li>Resume</li>
+  </ul>
+</nav>
+
+<div class="container">
+  <div class="left">
+    <h1>Hello! 👋🏽</h1>
+    <p>
+      My name is Sai Preetam, and I’m a student at UT Austin studying Informatics with concentrations in Data Science and Finance.<br><br>
+      I’m passionate about <span>AI, Web Development, and Social Impact Technology</span>. In my free time, I enjoy playing <span>basketball</span>, exploring <span>creative coding projects</span>, and contributing to <span>open-source communities</span>.
+    </p>
+    <div class="icons">
+      <a href="https://linkedin.com/in/thesaiearanti" target="_blank">LinkedIn</a>
+      <a href="https://github.com/TheSaiEaranti" target="_blank">GitHub</a>
+      <a href="mailto:saipreetam.earanti@utexas.edu">Email</a>
+    </div>
+  </div>
+  <div class="right">
+    <img src="profile.jpg" alt="Sai's photo">
+  </div>
+</div>
+
+<div class="footer">MADE BY SAI PREETAM EARANTI</div>
+
 </body>
 </html>

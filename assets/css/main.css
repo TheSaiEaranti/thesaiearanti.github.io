@@ -15,7 +15,7 @@ body {
   
   .logo {
     font-weight: bold;
-    color: #e26ba9;
+    color: #2e8b57; /* GREEN */
     font-size: 20px;
   }
   
@@ -53,7 +53,7 @@ body {
   }
   
   .text span {
-    color: #e26ba9;
+    color: #2e8b57; /* GREEN */
     font-weight: 600;
   }
   

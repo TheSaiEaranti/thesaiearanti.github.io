@@ -1,21 +1,24 @@
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #fafafa;
+    font-family: 'Inter', sans-serif;
+    background: #f7f7f7;
     color: #333;
+    font-size: 18px;
+    line-height: 1.6;
   }
   
   header nav {
-    background: #fff;
+    background: #ffffff;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    align-items: center;
+    padding: 24px 48px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
   }
   
   .logo {
     font-weight: bold;
-    color: #2e8b57; /* GREEN */
+    color: #2e8b57;
     font-size: 20px;
   }
   
@@ -33,14 +36,14 @@ body {
   
   .hero {
     max-width: 1000px;
-    margin: 60px auto;
+    margin: 80px auto;
     display: flex;
     gap: 40px;
     align-items: center;
-    padding: 40px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    padding: 40px 60px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   }
   
   .text {
@@ -48,17 +51,22 @@ body {
   }
   
   .text h1 {
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 20px;
   }
   
-  .text span {
-    color: #2e8b57; /* GREEN */
+  .text span.highlight {
+    color: #2e8b57;
     font-weight: 600;
   }
   
-  .icon-links {
+  .icon-links, .footer-icons {
     margin-top: 16px;
+  }
+  
+  .icon-links a,
+  .footer-icons a {
+    text-decoration: none;
   }
   
   .icon {
@@ -66,21 +74,25 @@ body {
     height: 40px;
     margin-right: 12px;
     transition: transform 0.2s ease;
+    vertical-align: middle;
   }
   
   .icon:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
   }
   
   .image img {
-    width: 250px;
+    width: 260px;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   footer {
     text-align: center;
-    margin: 40px;
-    color: #aaa;
-  }
+    margin-top: 60px;
+    padding: 20px;
+    font-size: 14px;
+    color: #888;
+  }  
   

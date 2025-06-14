@@ -1,12 +1,14 @@
+/* Main font settings */
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background: #f7f7f7;
     color: #333;
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.8;
   }
   
+  /* Header/nav stays the same */
   header nav {
     background: #ffffff;
     display: flex;
@@ -19,7 +21,7 @@ body {
   .logo {
     font-weight: bold;
     color: #2e8b57;
-    font-size: 20px;
+    font-size: 22px;
   }
   
   .nav-links {
@@ -34,13 +36,14 @@ body {
     font-weight: 500;
   }
   
+  /* HERO SECTION — INCREASED FONT + SPACING */
   .hero {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 80px auto;
     display: flex;
-    gap: 40px;
+    gap: 50px;
     align-items: center;
-    padding: 40px 60px;
+    padding: 60px 70px;
     background: #ffffff;
     border-radius: 14px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
@@ -51,17 +54,23 @@ body {
   }
   
   .text h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+  
+  .text p {
+    font-size: 20px;
+    margin-bottom: 18px;
   }
   
   .text span.highlight {
     color: #2e8b57;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 20px;
   }
   
   .icon-links, .footer-icons {
-    margin-top: 16px;
+    margin-top: 20px;
   }
   
   .icon-links a,
@@ -70,29 +79,31 @@ body {
   }
   
   .icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 12px;
+    width: 44px;
+    height: 44px;
+    margin-right: 14px;
     transition: transform 0.2s ease;
     vertical-align: middle;
   }
   
   .icon:hover {
-    transform: scale(1.1);
+    transform: scale(1.12);
   }
   
+  /* Image sizing */
   .image img {
-    width: 260px;
+    width: 280px;
     border-radius: 12px;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
+  /* Footer remains the same */
   footer {
     text-align: center;
     margin-top: 60px;
     padding: 20px;
     font-size: 14px;
     color: #888;
-  }  
+  }
   

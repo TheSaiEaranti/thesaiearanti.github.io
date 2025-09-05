@@ -1,57 +1,530 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sai Preetam | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio - Interactive 3D Experience</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+            color: white;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 8rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 300% 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4ecdc4;
+        }
+
+        .card p {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .contact-form {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .nav {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-item {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                top: 1rem;
+                right: 1rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">SAI PREETAM</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-      </ul>
+    <div id="canvas-container"></div>
+    
+    <div class="floating-shapes"></div>
+    
+    <nav class="nav">
+        <a href="#home" class="nav-item">Home</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#skills" class="nav-item">Skills</a>
+        <a href="#contact" class="nav-item">Contact</a>
     </nav>
-  </header>
 
-  <section class="hero">
-    <div class="text">
-      <h1>Hello! 👋🏽</h1>
-      <p>
-        My name is Sai Preetam, and I am a UT Austin Informatics student with concentrations in Data Science and Finance.
-      </p>
-      <p>
-        I’m passionate about <span class="highlight">AI</span>, <span class="highlight">Software Development</span>, and <span class="highlight">Social Impact Tech</span>.
-      </p>
-    </div>
-    <div class="image">
-      <img src="assets/images/profile.jpg" alt="Sai's photo" />
-    </div>
-  </section>
+    <div class="content">
+        <section id="home" class="hero">
+            <h1>Your Name</h1>
+            <p>Creative Developer & Digital Innovator</p>
+            <a href="#projects" class="cta-button">Explore My Work</a>
+        </section>
 
-  <footer>
-    <div class="footer-icons">
-      <a href="https://linkedin.com/in/thesaiearanti" target="_blank">
-        <img src="assets/images/linkedin.png" alt="LinkedIn" class="icon" />
-      </a>
-      <a href="https://github.com/TheSaiEaranti" target="_blank">
-        <img src="assets/images/github.png" alt="GitHub" class="icon" />
-      </a>
-      <a href="mailto:saipreetam.earanti@utexas.edu">
-        <img src="assets/images/email.png" alt="Email" class="icon" />
-      </a>
-    </div>
-    <p>MADE BY SAI PREETAM EARANTI</p>
-  </footer>
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Background</h3>
+                    <p>I'm a passionate developer with expertise in creating immersive digital experiences. I love combining creativity with technical skills to build innovative solutions that make a difference.</p>
+                </div>
+                <div class="card">
+                    <h3>Philosophy</h3>
+                    <p>I believe in the power of technology to transform ideas into reality. Every project is an opportunity to push boundaries and create something meaningful.</p>
+                </div>
+                <div class="card">
+                    <h3>Goals</h3>
+                    <p>My mission is to craft exceptional digital experiences that not only look beautiful but also solve real-world problems and inspire others.</p>
+                </div>
+            </div>
+        </section>
 
-  <script src="assets/js/main.js"></script>
+        <section id="projects" class="section">
+            <h2>Featured Projects</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>3D Web Application</h3>
+                    <p>An immersive 3D web experience built with Three.js, featuring real-time interactions and stunning visual effects.</p>
+                </div>
+                <div class="card">
+                    <h3>Mobile App Design</h3>
+                    <p>A complete mobile application with modern UI/UX principles, delivering seamless user experiences across platforms.</p>
+                </div>
+                <div class="card">
+                    <h3>E-commerce Platform</h3>
+                    <p>A full-stack e-commerce solution with advanced features including real-time inventory management and payment processing.</p>
+                </div>
+                <div class="card">
+                    <h3>AI Integration Project</h3>
+                    <p>A cutting-edge application integrating machine learning capabilities to provide intelligent solutions for complex problems.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">Three.js</div>
+                <div class="skill-item">React</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">WebGL</div>
+                <div class="skill-item">UI/UX Design</div>
+                <div class="skill-item">MongoDB</div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Get In Touch</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // Three.js 3D Scene Setup
+        let scene, camera, renderer, particles;
+        let mouseX = 0, mouseY = 0;
+
+        function init() {
+            const container = document.getElementById('canvas-container');
+            
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x000000, 0);
+            container.appendChild(renderer.domElement);
+
+            // Create particle system
+            createParticles();
+            
+            // Create floating 3D objects
+            createFloatingObjects();
+            
+            camera.position.z = 5;
+            
+            animate();
+        }
+
+        function createParticles() {
+            const particleCount = 1000;
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+            
+            for (let i = 0; i < particleCount * 3; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 50;
+                positions[i + 1] = (Math.random() - 0.5) * 50;
+                positions[i + 2] = (Math.random() - 0.5) * 50;
+                
+                colors[i] = Math.random() * 0.5 + 0.5;
+                colors[i + 1] = Math.random() * 0.5 + 0.5;
+                colors[i + 2] = 1.0;
+            }
+            
+            const geometry = new THREE.BufferGeometry();
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            
+            const material = new THREE.PointsMaterial({
+                size: 0.1,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.8
+            });
+            
+            particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+        }
+
+        function createFloatingObjects() {
+            const geometries = [
+                new THREE.BoxGeometry(1, 1, 1),
+                new THREE.SphereGeometry(0.5, 8, 6),
+                new THREE.ConeGeometry(0.5, 1, 8),
+                new THREE.CylinderGeometry(0.3, 0.3, 1, 8)
+            ];
+            
+            for (let i = 0; i < 20; i++) {
+                const geometry = geometries[Math.floor(Math.random() * geometries.length)];
+                const material = new THREE.MeshBasicMaterial({
+                    color: new THREE.Color().setHSL(Math.random(), 0.7, 0.6),
+                    wireframe: true,
+                    transparent: true,
+                    opacity: 0.3
+                });
+                
+                const mesh = new THREE.Mesh(geometry, material);
+                mesh.position.set(
+                    (Math.random() - 0.5) * 20,
+                    (Math.random() - 0.5) * 20,
+                    (Math.random() - 0.5) * 20
+                );
+                mesh.rotation.set(
+                    Math.random() * Math.PI,
+                    Math.random() * Math.PI,
+                    Math.random() * Math.PI
+                );
+                
+                scene.add(mesh);
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // Rotate particles based on mouse movement
+            if (particles) {
+                particles.rotation.x += (mouseY * 0.0001);
+                particles.rotation.y += (mouseX * 0.0001);
+            }
+            
+            // Rotate all objects
+            scene.children.forEach(child => {
+                if (child.type === 'Mesh') {
+                    child.rotation.x += 0.005;
+                    child.rotation.y += 0.01;
+                }
+            });
+            
+            renderer.render(scene, camera);
+        }
+
+        // Mouse movement tracking
+        document.addEventListener('mousemove', (event) => {
+            mouseX = (event.clientX - window.innerWidth / 2);
+            mouseY = (event.clientY - window.innerHeight / 2);
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Create floating shapes animation
+        function createFloatingShapes() {
+            const shapesContainer = document.querySelector('.floating-shapes');
+            
+            function addShape() {
+                const shape = document.createElement('div');
+                shape.className = 'shape';
+                shape.style.left = Math.random() * 100 + '%';
+                shape.style.width = (Math.random() * 20 + 10) + 'px';
+                shape.style.height = shape.style.width;
+                shape.style.animationDelay = Math.random() * 2 + 's';
+                shapesContainer.appendChild(shape);
+                
+                setTimeout(() => {
+                    shape.remove();
+                }, 20000);
+            }
+            
+            setInterval(addShape, 3000);
+        }
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            this.reset();
+        });
+
+        // Initialize everything
+        init();
+        createFloatingShapes();
+    </script>
 </body>
 </html>
-

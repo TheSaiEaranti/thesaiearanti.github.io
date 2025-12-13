@@ -10,6 +10,8 @@
 
   gtag('config', 'G-JQK3MKWX9L');
 </script>
+    <!-- Vercel Web Analytics -->
+    <script defer src="https://cdn.vercel-analytics.com/v1/script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Preetam Earanti - Portfolio</title>
@@ -916,4 +918,12 @@
         const navLinks = document.getElementById('navLinks');
 
         mobileToggle.addEventListener('click', () => {
-            navLinks.
+            toggle();
+        });
+
+        function toggleMenu() {
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

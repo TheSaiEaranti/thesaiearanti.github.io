@@ -6,7 +6,7 @@ const PA_RESUME = {
   name: 'Sai Preetam Earanti',
   email: 'saipreetam.earanti@utexas.edu',
   phone: '(512) 635-7266',
-  linkedin: 'linkedin.com/in/sai-preetam-earanti',
+  linkedin: 'https://www.linkedin.com/in/sai-preetam-earanti-580717285/',
   github: 'github.com/TheSaiEaranti',
   edu: {
     school: 'The University of Texas at Austin',

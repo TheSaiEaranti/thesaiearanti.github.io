@@ -518,7 +518,7 @@ function PortfolioA({ accent = 'green' }) {
           <div className="pa-contact-links">
             <a href={`https://${r.linkedin}`} target="_blank" rel="noreferrer">
               <span className="pa-link-lbl">linkedin</span>
-              <span className="pa-link-val">/in/sai-preetam-earanti</span>
+              <span className="pa-link-val">/in/sai-preetam-earanti-580717285/</span>
             </a>
             <a href={`https://${r.github}`} target="_blank" rel="noreferrer">
               <span className="pa-link-lbl">github</span>

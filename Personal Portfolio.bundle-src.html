@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sai Preetam Earanti — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="portfolio-a.css" />
+<link rel="stylesheet" href="shell.css" />
+
+<!-- Devicon assets — referenced dynamically in JS, lifted to ext-resource-dependency -->
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" data-resource-id="ico_python" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" data-resource-id="ico_cplusplus" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" data-resource-id="ico_typescript" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" data-resource-id="ico_javascript" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" data-resource-id="ico_java" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" data-resource-id="ico_go" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" data-resource-id="ico_mysql" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" data-resource-id="ico_html5" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" data-resource-id="ico_css3" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" data-resource-id="ico_react" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" data-resource-id="ico_nextjs" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" data-resource-id="ico_nodejs" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" data-resource-id="ico_express" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" data-resource-id="ico_flutter" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" data-resource-id="ico_spring" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" data-resource-id="ico_django" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" data-resource-id="ico_tensorflow" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" data-resource-id="ico_pytorch" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" data-resource-id="ico_aws" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" data-resource-id="ico_docker" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" data-resource-id="ico_redis" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" data-resource-id="ico_mongodb" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" data-resource-id="ico_nginx" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" data-resource-id="ico_fastapi" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" data-resource-id="ico_git" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" data-resource-id="ico_github" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg" data-resource-id="ico_jest" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" data-resource-id="ico_pandas" />
+<meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" data-resource-id="ico_opencv" />
+
+<template id="__bundler_thumbnail" data-bg-color="#f4f1eb">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#f4f1eb"/>
+  <text x="600" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="180" font-style="italic" fill="#1a1a1a">SE</text>
+  <rect x="540" y="430" width="120" height="3" fill="#3d8f5e"/>
+  <text x="600" y="490" text-anchor="middle" font-family="ui-monospace, monospace" font-size="22" fill="#3d8f5e" letter-spacing="4">PORTFOLIO</text>
+</svg>
+</template>
+<style>
+  html, body { margin: 0; padding: 0; background: oklch(0.97 0.008 80); }
+  body { font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+  html { scroll-behavior: smooth; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="shell.jsx"></script>
+<script type="text/babel" src="portfolio-a.bundle.jsx"></script>
+
+<script type="text/babel">
+const TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "green",
+  "displayFont": "serif"
+}/*EDITMODE-END*/;
+
+function App() {
+  const [tweaks, setTweaks] = useTweaks(TWEAKS_DEFAULTS);
+
+  React.useEffect(() => {
+    if (document.getElementById('pa-font-override')) return;
+    const s = document.createElement('style');
+    s.id = 'pa-font-override';
+    s.textContent = `
+      .pa-root[data-display-font="sans"] .pa-hero-title,
+      .pa-root[data-display-font="sans"] .pa-sec-title,
+      .pa-root[data-display-font="sans"] .pa-tl-head h3,
+      .pa-root[data-display-font="sans"] .pa-project-name,
+      .pa-root[data-display-font="sans"] .pa-skill-cat,
+      .pa-root[data-display-font="sans"] .pa-link-val {
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 600 !important; font-style: normal !important;
+        letter-spacing: -0.025em !important;
+      }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
+  React.useEffect(() => {
+    document.querySelectorAll('.pa-root').forEach((el) => {
+      el.dataset.displayFont = tweaks.displayFont;
+    });
+  }, [tweaks.displayFont]);
+
+  const palItems = [
+    { id: 'about', label: 'Jump to: About', icon: '◉' },
+    { id: 'experience', label: 'Jump to: Experience', icon: '◉' },
+    { id: 'projects', label: 'Jump to: Projects', icon: '◉' },
+    { id: 'skills', label: 'Jump to: Skills', icon: '◉' },
+    { id: 'contact', label: 'Jump to: Contact', icon: '◉' },
+    { id: 'email', label: 'Copy email address', icon: '✉', hint: 'saipreetam.earanti@utexas.edu' },
+    { id: 'github', label: 'Open GitHub', icon: '↗', hint: 'TheSaiEaranti' },
+    { id: 'linkedin', label: 'Open LinkedIn', icon: '↗', hint: 'sai-preetam-earanti' },
+    { id: 'theme', label: 'Toggle: hacker mode', icon: '◐', hint: '↑↑↓↓←→←→BA' },
+  ];
+  const shell = useShell({});
+  const [forceHacker, setForceHacker] = React.useState(false);
+
+  const onPick = (it) => {
+    if (it.id === 'email') navigator.clipboard?.writeText('saipreetam.earanti@utexas.edu');
+    else if (it.id === 'github') window.open('https://github.com/TheSaiEaranti', '_blank');
+    else if (it.id === 'linkedin') window.open('https://linkedin.com/in/sai-preetam-earanti', '_blank');
+    else if (it.id === 'theme') setForceHacker((h) => !h);
+    else {
+      document.getElementById(it.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  return (
+    <>
+      <PortfolioA accent={tweaks.accent} />
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection title="Accent color">
+          <TweakRadio
+            value={tweaks.accent}
+            onChange={(v) => setTweaks({ accent: v })}
+            options={[
+              { value: 'green', label: 'Terminal green' },
+              { value: 'blue', label: 'Electric blue' },
+              { value: 'orange', label: 'Burnt orange' },
+              { value: 'magenta', label: 'Hot pink' },
+              { value: 'amber', label: 'Amber' },
+            ]}
+          />
+        </TweakSection>
+        <TweakSection title="Display font">
+          <TweakRadio
+            value={tweaks.displayFont}
+            onChange={(v) => setTweaks({ displayFont: v })}
+            options={[
+              { value: 'serif', label: 'Instrument Serif (editorial)' },
+              { value: 'sans', label: 'Inter (modernist)' },
+            ]}
+          />
+        </TweakSection>
+      </TweaksPanel>
+
+      <CommandPalette
+        open={shell.paletteOpen}
+        onClose={() => shell.setPaletteOpen(false)}
+        items={palItems}
+        onPick={onPick}
+      />
+      <HelpOverlay open={shell.helpOpen} onClose={() => shell.setHelpOpen(false)} />
+      <ShellOverlay active={shell.hackerMode || forceHacker} />
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

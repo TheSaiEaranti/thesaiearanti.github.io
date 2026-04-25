@@ -516,7 +516,7 @@ function PortfolioA({ accent = 'green' }) {
           </p>
           <PACopyEmail email={r.email} />
           <div className="pa-contact-links">
-            <a href={`https://${r.linkedin}`} target="_blank" rel="noreferrer">
+            <a href={`https://www.linkedin.com/in/sai-preetam-earanti-580717285/`} target="_blank" rel="noreferrer">
               <span className="pa-link-lbl">linkedin</span>
               <span className="pa-link-val">/in/sai-preetam-earanti-580717285/</span>
             </a>

@@ -77,7 +77,7 @@ function App() {
   const onPick = (it) => {
     if (it.id === 'email') navigator.clipboard?.writeText('saipreetam.earanti@utexas.edu');
     else if (it.id === 'github') window.open('https://github.com/TheSaiEaranti', '_blank');
-    else if (it.id === 'linkedin') window.open('www.linkedin.com/in/sai-preetam-earanti-580717285/', '_blank');
+    else if (it.id === 'linkedin') window.open('https://www.linkedin.com/in/sai-preetam-earanti-580717285/', '_blank');
     else if (it.id === 'theme') setForceHacker((h) => !h);
     else {
       document.getElementById(it.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
